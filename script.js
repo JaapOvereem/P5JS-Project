@@ -1,5 +1,35 @@
 var x, y;
 
+class Ball{
+  constructor (x, y, vx, vy, w, h){
+    this.x = x;
+    this.y = y;
+    this.vx = vx;
+    this.vy = vy;
+    this.width = w;
+    this.height = h;
+  }
+
+}
+
+var ball1 = new Ball(0,0,5,4,40,40)
+
+drawball(){
+   
+  ellipse(this.x,this.y,this.height,this.width);
+    fill('red');
+    this.x = this.x + this.x;
+    this.y = this.y + this.y;
+  
+  if(this.x <= 25 || this.x > 475){
+    this.vx = this.vx * -1;
+  }
+
+  if(this.y <= 25 || this.y > 375){
+    this.vy = this.vy * -1;
+  }
+}
+
 function setup() {
 	createCanvas(500, 400);
 
